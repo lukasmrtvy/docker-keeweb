@@ -27,9 +27,13 @@ RUN wget https://github.com/keeweb/keeweb-plugins/archive/master.zip; \
     rm -rf keeweb-plugins-master \
     rm keeweb/plugins/CNAME
 
+EXPOSE 443
+EXPOSE 80
+
+LABEL version=""
+LABEL url=https://github.com/keeweb/keeweb
+
+
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
 CMD /usr/sbin/nginx -g "daemon off;"
-
-EXPOSE 443
-EXPOSE 80
